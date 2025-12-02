@@ -1,0 +1,11 @@
+package com.example.mypim.domain.repository
+
+import com.example.mypim.domain.model.Transaction
+import kotlinx.coroutines.flow.Flow
+
+interface TransactionRepository {
+    fun getTransactions(): Flow<List<Transaction>>
+    suspend fun getTransactionById(id: Int): Transaction?
+    suspend fun insertTransaction(transaction: Transaction)
+    suspend fun deleteTransaction(transaction: Transaction)
+}
